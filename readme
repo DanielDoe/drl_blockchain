@@ -1,0 +1,29 @@
+#---------------------------主程序--------------------------
+main_dqn.py  # DQN
+main_dueling_dqn.py  # Dueling DQN
+main_qlearning.py  # Q_Learning
+
+
+# -----------------------------画图文件----------------------
+main_plot.py  # 中间结果：system reward/sat/RU, cost(loss)
+main_plot_paper.py # DQN论文中的图
+main_plot_paper_dueling.py # Dueling DQN论文中的图
+
+
+#--------------------------其他代码---------------------------
+DRL算法模块：RL_brain.py(DQN), Dueling_DQN.py(Dueling DQN), q_learning.py(Q_Learning)
+物理资源分配模块：physical_resource.py
+场景配置模块：env.py
+工具函数模块：utils.py  (主要是调整reward的参数配置)
+
+
+#----------------------------模拟的场景--------------
+1、场景中涉及到基站（BS）、切片（Slice）、用户（UE）
+2、UE会请求切片的服务，而切片的服务是由BS来提供的，每个BS上都配置了相同数量的切片，但是切片占用的资源比例不同
+3、DRL算法用来调整切片级的资源比例，然后会将切片级的资源比例映射到BS上，接着进行用户级的物理资源分配。
+4、UE会按照一定的规律给BS发送数据流，然后每一类切片都有一个数据流队列，每隔一帧（10ms）会进行一次物理资源分配。
+
+
+
+
+
